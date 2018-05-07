@@ -1,19 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      steps {
-        sh 'echo "Build Success" '
-      }
-    }
-    stage('sleep') {
+    stage('Sleep') {
       steps {
         sleep 10
       }
     }
-    stage('') {
+    stage('print') {
       steps {
-        echo 'helllo'
+        echo 'hello'
+      }
+    }
+    stage('mail') {
+      steps {
+        mail(subject: 'testing', body: 'test', to: 'swakriti.kumari@cgi.com', from: 'anuradha.bhattacharya@cgi.com')
       }
     }
   }
